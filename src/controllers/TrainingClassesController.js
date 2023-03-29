@@ -16,7 +16,15 @@ module.exports = {
         TrainingClassesService.saveTrainingClass(req, res, next);
 
 
-    }
+    },
+
+    getAllTrainingClasses : async (req, res, next) => {
+
+
+        TrainingClassesService.getAllTrainingClasses(req, res, next);
+
+        
+    }
 
 
 
