@@ -2,6 +2,8 @@ class NotFoundException extends Error {
 
 
 
+
+    
     constructor(message) {
 
 
