@@ -12,6 +12,8 @@ module.exports = {
 
 
 
+    
+
     saveTrainingClass: async (req, res, next) => {
 
 
@@ -20,7 +22,10 @@ module.exports = {
         const data = req.body
 
 
+
+
         db.query("INSERT into training_classes SET ? ", data, (error, result) => {
+
 
 
 
@@ -30,6 +35,8 @@ module.exports = {
 
                 next(new NotSavedException("Data not saved successfully", 400));
             }
+
+
 
 
 

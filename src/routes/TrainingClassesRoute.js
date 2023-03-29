@@ -10,6 +10,8 @@ const TrainingClassesController = require("../controllers/TrainingClassesControl
 
 
 
+
+
 router.post("/training-classes/save", TrainingClassesController.saveTrainingClass);
 
 
