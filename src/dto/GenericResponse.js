@@ -4,8 +4,13 @@
 
 class GenericResponse {
 
+
+
     message;
     data;
+
+
+
 
     constructor(message, data) {
         this.message = message;
