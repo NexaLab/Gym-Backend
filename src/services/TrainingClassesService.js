@@ -45,9 +45,20 @@ module.exports = {
 
     },
 
-    getAllTrainingClasses : async (req, res,next)=>{
+
+
+
+
+    getAllTrainingClasses: async (req, res, next) => {
+
+
+
+
 
         const query = "SELECT * FROM training_classes";
+
+
+
 
         db.query(query, (error, result) => {
 
