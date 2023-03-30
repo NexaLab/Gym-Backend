@@ -23,12 +23,23 @@ module.exports = {
 
 
 
-    
+
 
     getAllTrainingClasses: async (req, res, next) => {
 
 
         TrainingClassesService.getAllTrainingClasses(req, res, next);
+
+
+    },
+
+
+
+    updateTrainingClass: async (req, res, next) => {
+
+
+
+        TrainingClassesService.updateTrainingClass(req, res, next);
 
 
     }
