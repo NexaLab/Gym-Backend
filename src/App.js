@@ -69,6 +69,7 @@ app.use(cors({
 
 const testRouter = require("./routes/TestRoute");
 const trainingClassesRouter = require("./routes/TrainingClassesRoute");
+const clientInfoRouter = require("./routes/ClientInfoRoute")
 
 
 
@@ -77,6 +78,7 @@ const trainingClassesRouter = require("./routes/TrainingClassesRoute");
 
 app.use("", testRouter)
 app.use("", trainingClassesRouter)
+app.use("", clientInfoRouter)
 
 
 
