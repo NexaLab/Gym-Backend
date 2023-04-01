@@ -68,15 +68,16 @@ app.use(cors({
 
 
 const testRouter = require("./routes/TestRoute");
-const trainingClassesRouter = require("./routes/TrainingClassesRoute");
-
+const schedularRouter = require("./routes/SchedularRoute");
+const coachRouter = require("./routes/CoachRoute")
 
 
 
 
 
 app.use("", testRouter)
-app.use("", trainingClassesRouter)
+app.use("", schedularRouter)
+app.use("", coachRouter)
 
 
 
