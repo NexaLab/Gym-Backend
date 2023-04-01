@@ -68,6 +68,7 @@ app.use(cors({
 
 
 const testRouter = require("./routes/TestRoute");
+const clientInfoRouter = require("./routes/ClientInfoRoute")
 const schedularRouter = require("./routes/SchedularRoute");
 const coachRouter = require("./routes/CoachRoute")
 
@@ -76,6 +77,7 @@ const coachRouter = require("./routes/CoachRoute")
 
 
 app.use("", testRouter)
+app.use("", clientInfoRouter)
 app.use("", schedularRouter)
 app.use("", coachRouter)
 
