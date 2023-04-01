@@ -3,16 +3,19 @@ class ClientDto {
   firstName;
   lastName;
   email;
-  gender;
+  phoneNo;
   address;
+  Class;
 
-  constructor(id, firstName,lastName,email,gender,address) {
+  constructor(id, firstName,lastName,email,phoneNo, Class,address) {
     this.id = id;
     this.firstName = firstName
     this.lastName = lastName
     this.email = email
-    this.gender = gender
-    this.address = address
+    this.phoneNo = phoneNo;
+    this.Class = Class;
+    this.address = address;
+    
   }
 
 
