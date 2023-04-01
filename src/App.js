@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const bodyParser = require('body-parser');
-
+const error = require("./middlewares/ErrorHandler");
 
 require('dotenv').config()
 
@@ -68,14 +68,16 @@ app.use(cors({
 
 
 const testRouter = require("./routes/TestRoute");
-
-
+const schedularRouter = require("./routes/SchedularRoute");
+const coachRouter = require("./routes/CoachRoute")
 
 
 
 
 
 app.use("", testRouter)
+app.use("", schedularRouter)
+app.use("", coachRouter)
 
 
 
@@ -112,3 +114,9 @@ app.listen(port, () => {
     console.log("App listening on port 3001");
 
 });
+
+
+
+
+
+app.use(error);
