@@ -1,3 +1,4 @@
+const { deleteScheduleById } = require("../services/ScheduleService");
 const ScheduleService = require("../services/ScheduleService");
 
 
@@ -42,6 +43,14 @@ module.exports = {
         ScheduleService.updateTrainingClass(req, res, next);
 
 
+    },
+
+
+
+    deleteScheduleById: async (req, res, next) => {
+
+
+        ScheduleService.deleteScheduleById(req, res, next);
     }
 
 

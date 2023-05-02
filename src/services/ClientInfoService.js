@@ -11,7 +11,7 @@ module.exports = {
 
     getAllClients: async (req , res , next) => {
 
-        const query = "SELECT c.id , c.first_name , c.last_name , c.email , c.phone_no , c.address , sc.Class from client c INNER JOIN schedule sc on c.id = sc.client_id ";
+        const query = "SELECT sc.id , c.first_name , c.last_name , c.email , c.phone_no , c.address , sc.class from client c INNER JOIN schedule sc on c.id = sc.client_id ";
 
         db.query(query, (error, result) => {
 
@@ -67,7 +67,7 @@ module.exports = {
                             result[index].last_name,
                             result[index].email,
                             result[index].phone_no,
-                            result[index].Class,
+                            result[index].class,
                             result[index].address,
                             
 

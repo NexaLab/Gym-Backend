@@ -124,7 +124,7 @@ module.exports = {
 
                     for (let index = 0; index < result.length; index++) {
 
-                   
+
 
 
                         trainingClasses.push(new TrainingClassDto(
@@ -282,6 +282,59 @@ module.exports = {
 
 
     },
+
+
+
+
+
+
+
+    deleteScheduleById: async (req, res, next) => {
+
+
+
+
+
+
+        const scheduleID = req.params.scheduleID
+
+
+        db.query("DELETE FROM schedule where id = ? ", scheduleID , (error, result) => {
+
+
+
+
+
+
+
+            if (error) {
+
+
+
+                next(new InternalServerException(
+                    "Error from Server side while deleting schedule by ID " + scheduleID
+                ));
+
+
+            }
+
+
+
+
+
+
+            else {
+
+                return res.send(new GenericResponse("Deleted schedule successfully by id: " + scheduleID, null));
+            }
+
+
+
+
+        })
+
+
+    }
 
 
 

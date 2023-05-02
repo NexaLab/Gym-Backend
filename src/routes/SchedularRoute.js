@@ -18,6 +18,7 @@ router.get("/training-classes/all", ScheduleController.getAllTrainingClasses);
 
 router.put("/training-classes/update/:scheduleID", ScheduleController.updateTrainingClass);
 
+router.delete("/training-classes/delete/:scheduleID", ScheduleController.deleteScheduleById);
 
 
 
