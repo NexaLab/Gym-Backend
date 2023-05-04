@@ -10,7 +10,7 @@ module.exports = {
 
 
 
-    getPrivateRoomOfUsersByEmail: (req, res, next) => {
+    getPrivateRoomOfUsersByEmail: async (req, res, next) => {
 
 
         const emails = {
@@ -19,7 +19,7 @@ module.exports = {
         }
 
 
-        db.query(`SELECT room_id from private_rooms pr where (pr.user_1_id = (select u.user_id from user u where u.email= ? ) or pr.user_1_id =(select u.user_id from user u where u.email= ? )) and (pr.user_2_id = (select u.user_id from user u where u.email= ? ) or pr.user_2_id = (select u.user_id from user u where u.email= ? ));`, [emails.firstUserEmail, emails.secondUserEmail, emails.firstUserEmail, emails.secondUserEmail], (error, result, fields) => {
+        db.query(`SELECT pr.id from private_rooms pr where (pr.admin_id = (select ad.id from admin ad inner join users u on ad.user_id = u.id where u.email= ? ) or pr.client_id = (select c.user_id from clients c inner join users u on c.user_id = u.id where u.email= ? )) and (pr.client_id = (select c.user_id from clients c inner join users u on c.user_id = u.id where u.email= ? ) or pr.admin_id = (select ad.id from admin ad inner join users u on ad.user_id = u.id where u.email= ? ));`, [emails.firstUserEmail, emails.firstUserEmail, emails.secondUserEmail, emails.secondUserEmail], (error, result, fields) => {
 
 
             if (error) {

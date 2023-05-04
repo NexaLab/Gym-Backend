@@ -95,7 +95,7 @@ const testRouter = require("./routes/TestRoute");
 const clientInfoRouter = require("./routes/ClientInfoRoute")
 const schedularRouter = require("./routes/SchedularRoute");
 const coachRouter = require("./routes/CoachRoute")
-
+const privateRouter = require("./routes/PrivateRoomRoute");
 
 
 
@@ -104,6 +104,7 @@ app.use("", testRouter)
 app.use("", clientInfoRouter)
 app.use("", schedularRouter)
 app.use("", coachRouter)
+app.use("", privateRouter);
 
 
 
@@ -136,7 +137,6 @@ io.on("connection", (socket) => {
 
 
     socket.on("join-room", (data) => {
-        console.log(data);
         socket.join(data);
     })
 
