@@ -7,6 +7,12 @@ module.exports = {
 
         messageService.getMessagesOfTwoUsers(req,res,next)
 
+    },
+
+    saveMessages: async(data) => {
+
+        messageService.saveMessages(data)
+
     }
     
 }

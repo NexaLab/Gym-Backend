@@ -32,10 +32,37 @@ module.exports = {
             }
 
 
+        })
+
+
+        
+
+    },
+
+    saveMessages: (data) => {
+
+
+        db.query("INSERT INTO messages(user_sender_id,user_receiver_id,messages) values((select id from users where email = ?), (select id from users where email = ?), ?)" ,[data.messageSender,data.messageReceiver,data.message], (error, result) => {
+
+
+
+            if (error) {
+
+                return error
+
+            }
+
+
+            else {
+
+                return(new GenericResponse("Data sended", null));
+            }
+
+
 
         })
 
-        
+
 
     }
 
