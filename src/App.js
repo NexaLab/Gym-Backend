@@ -132,7 +132,7 @@ app.get("/api/hello", (req, res) => {
 io.on("connection", (socket) => {
 
 
-    console.log(`User connected: ${socket.id} `);
+    // console.log(`User connected: ${socket.id} `);
 
 
 
@@ -143,9 +143,7 @@ io.on("connection", (socket) => {
 
 
     socket.on("send-message", (data) => {
-        console.log(data);
         socket.to(data.room).emit("receive-message", data);
-        // messageController.SaveMessages(data);
     })
 
 
