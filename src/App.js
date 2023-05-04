@@ -106,11 +106,8 @@ app.use("", testRouter)
 app.use("", clientInfoRouter)
 app.use("", schedularRouter)
 app.use("", coachRouter)
-<<<<<<< HEAD
 app.use("", privateRouter);
-=======
-app.use("" , messagesRouter)
->>>>>>> 61ab46483c5f8bcbf38521756f5619875b87edcc
+app.use("", messagesRouter)
 
 
 
