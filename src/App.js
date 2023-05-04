@@ -95,6 +95,7 @@ const testRouter = require("./routes/TestRoute");
 const clientInfoRouter = require("./routes/ClientInfoRoute")
 const schedularRouter = require("./routes/SchedularRoute");
 const coachRouter = require("./routes/CoachRoute")
+const messagesRouter = require("./routes/MessagesRoute")
 
 
 
@@ -104,6 +105,7 @@ app.use("", testRouter)
 app.use("", clientInfoRouter)
 app.use("", schedularRouter)
 app.use("", coachRouter)
+app.use("" , messagesRouter)
 
 
 
