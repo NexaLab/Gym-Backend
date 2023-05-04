@@ -95,6 +95,7 @@ const testRouter = require("./routes/TestRoute");
 const clientInfoRouter = require("./routes/ClientInfoRoute")
 const schedularRouter = require("./routes/SchedularRoute");
 const coachRouter = require("./routes/CoachRoute")
+const privateRouter = require("./routes/PrivateRoomRoute");
 const messagesRouter = require("./routes/MessagesRoute")
 
 
@@ -105,7 +106,8 @@ app.use("", testRouter)
 app.use("", clientInfoRouter)
 app.use("", schedularRouter)
 app.use("", coachRouter)
-app.use("" , messagesRouter)
+app.use("", privateRouter);
+app.use("", messagesRouter)
 
 
 
@@ -133,21 +135,18 @@ app.get("/api/hello", (req, res) => {
 io.on("connection", (socket) => {
 
 
-    console.log(`User connected: ${socket.id} `);
+    // console.log(`User connected: ${socket.id} `);
 
 
 
     socket.on("join-room", (data) => {
-        console.log(data);
         socket.join(data);
     })
 
 
 
     socket.on("send-message", (data) => {
-        console.log(data);
         socket.to(data.room).emit("receive-message", data);
-        // messageController.SaveMessages(data);
     })
 
 
