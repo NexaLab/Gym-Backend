@@ -14,5 +14,20 @@ module.exports = {
         VideosQrService.saveVideosLink(req,res,next)
 
     }, 
+    
+    deleteVideosLinkById: async (req, res, next) => {
+
+
+        VideosQrService.deleteVideosLinkById(req, res, next);
+    },
+
+    updateVideoLink: async (req, res, next) => {
+
+
+
+        VideosQrService.updateVideoLink(req,res,next)
+
+
+    },
 
 }
