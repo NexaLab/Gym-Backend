@@ -97,7 +97,7 @@ const schedularRouter = require("./routes/SchedularRoute");
 const coachRouter = require("./routes/CoachRoute")
 const privateRouter = require("./routes/PrivateRoomRoute");
 const messagesRouter = require("./routes/MessagesRoute")
-
+const messageController = require("./controllers/MessageController");
 
 
 
@@ -147,6 +147,7 @@ io.on("connection", (socket) => {
 
     socket.on("send-message", (data) => {
         socket.to(data.room).emit("receive-message", data);
+        messageController.saveMessages(data);
     })
 
 
