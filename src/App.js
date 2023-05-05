@@ -97,6 +97,7 @@ const schedularRouter = require("./routes/SchedularRoute");
 const coachRouter = require("./routes/CoachRoute")
 const privateRouter = require("./routes/PrivateRoomRoute");
 const messagesRouter = require("./routes/MessagesRoute")
+const videosQrRouter = require("./routes/VideosQrRoute")
 
 
 
@@ -108,6 +109,7 @@ app.use("", schedularRouter)
 app.use("", coachRouter)
 app.use("", privateRouter);
 app.use("", messagesRouter)
+app.use("", videosQrRouter)
 
 
 
