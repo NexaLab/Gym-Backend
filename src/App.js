@@ -99,6 +99,7 @@ const privateRouter = require("./routes/PrivateRoomRoute");
 const messagesRouter = require("./routes/MessagesRoute")
 const messageController = require("./controllers/MessageController");
 const videosQrRouter = require("./routes/VideosQrRoute")
+const clientMembershipRouter = require ("./routes/MembershipRoute")
 
 
 
@@ -111,6 +112,7 @@ app.use("", coachRouter)
 app.use("", privateRouter);
 app.use("", messagesRouter)
 app.use("", videosQrRouter)
+app.use("", clientMembershipRouter)
 
 
 
