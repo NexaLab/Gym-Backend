@@ -82,7 +82,7 @@ module.exports = {
         const videoLinkID = req.params.videoLinkID
 
 
-        db.query("DELETE FROM videos_qr where id = ? ", videoLinkID , (error, result) => {
+        db.query("DELETE FROM videos_qr where id = ? ", videoLinkID, (error, result) => {
 
 
 
@@ -118,7 +118,7 @@ module.exports = {
 
 
     },
-    
+
     updateVideoLink: async (req, res, next) => {
 
 
