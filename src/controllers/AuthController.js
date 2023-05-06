@@ -8,6 +8,13 @@ module.exports = {
 
         authService.signUp(req,res,next);
 
+    },
+
+    login : async (req,res,next) =>{
+
+
+        authService.login(req,res,next);
+
     }
 
 

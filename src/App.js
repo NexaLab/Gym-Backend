@@ -117,10 +117,6 @@ app.use("", videosQrRouter)
 app.use("", clientMembershipRouter)
 app.use("", reviewRouter)
 app.use("/auth", authRouter)
-// const userService = require('./services/UserService')
-// const user = await userSevice.getUser("afshal00@gmail.com")
-// console.log(user);
-
 
 
 
