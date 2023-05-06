@@ -101,6 +101,7 @@ const messageController = require("./controllers/MessageController");
 const videosQrRouter = require("./routes/VideosQrRoute")
 const clientMembershipRouter = require ("./routes/MembershipRoute")
 const reviewRouter = require ("./routes/ReviewsRoute")
+const authRouter = require ("./routes/AuthRouter")
 
 
 
@@ -115,7 +116,10 @@ app.use("", messagesRouter)
 app.use("", videosQrRouter)
 app.use("", clientMembershipRouter)
 app.use("", reviewRouter)
-
+app.use("/auth", authRouter)
+// const userService = require('./services/UserService')
+// const user = await userSevice.getUser("afshal00@gmail.com")
+// console.log(user);
 
 
 
