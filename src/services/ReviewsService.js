@@ -1,5 +1,6 @@
 const db = require("../db-connection/DbConnection");
 const GenericResponse = require("../dto/GenericResponse");
+const ReviewResponse = require("../dto/ReviewsDto")
 const InternalServerException = require("../exceptions/InternalServerException");
 
 
@@ -24,7 +25,7 @@ module.exports = {
 
             else {
 
-                return res.send(new GenericResponse("List of All client reviews ", result));
+                return res.send(new ReviewResponse("List of All client reviews ", result));
             }
 
 
