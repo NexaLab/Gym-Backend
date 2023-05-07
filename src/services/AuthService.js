@@ -92,7 +92,10 @@ module.exports = {
               return res.send(
                 new GenericResponse(
                   "User has been Logged In successfully",
-                  token
+                  {
+                    token: token,
+                    email: req.body.email
+                  }
                 )
               );
             } else {
