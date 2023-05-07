@@ -9,9 +9,9 @@ const ClientDto = require("../dto/ClientDto")
 module.exports = {
 
 
-    getAllClients: async (req , res , next) => {
+    getAllClients: async (req, res, next) => {
 
-        const query = "SELECT sc.id , c.first_name , c.last_name , c.email , c.phone_no , c.address , sc.class from client c INNER JOIN schedule sc on c.id = sc.client_id ";
+        const query = "SELECT sc.id , c.first_name , c.last_name , u.email , c.phone_no  , sc.class from clients c INNER JOIN schedule sc on c.id = sc.client_id inner join users u on c.user_id = u.id ";
 
         db.query(query, (error, result) => {
 
@@ -32,7 +32,7 @@ module.exports = {
 
 
 
-                
+
 
                 if (result.length === 0) {
 
@@ -69,7 +69,7 @@ module.exports = {
                             result[index].phone_no,
                             result[index].class,
                             result[index].address,
-                            
+
 
                         ))
 
